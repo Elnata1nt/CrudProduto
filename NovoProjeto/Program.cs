@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using Course;
 
@@ -8,15 +8,17 @@ namespace Couser
     {
         static void Main(string[] args)
         {
-            Produto p = new Produto();
+            
 
             Console.WriteLine("Entre os dados do produto: ");
             Console.Write("Nome: ");
-            p.Nome = Console.ReadLine();
+            string nome = Console.ReadLine();
             Console.Write("Preço: ");
-            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InstalledUICulture);
+            double preco = double.Parse(Console.ReadLine(), CultureInfo.InstalledUICulture);
             Console.Write("Quantidade no estoque: ");
-            p.Quantidade = int.Parse(Console.ReadLine(), CultureInfo.InstalledUICulture);
+            int quantidade = int.Parse(Console.ReadLine(), CultureInfo.InstalledUICulture);
+
+            Produto p = new Produto(nome, preco, quantidade);
 
             Console.WriteLine();
             Console.WriteLine(" Dados do produto: " + p );
